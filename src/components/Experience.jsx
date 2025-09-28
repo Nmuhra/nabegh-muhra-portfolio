@@ -47,7 +47,7 @@ const Experience = () => {
             </div>
 
             <div className="space-y-8">
-              {cvData.education.map((edu, index) => (
+              {education.map((edu, index) => (
                 <div 
                   key={index}
                   className="bg-gray-900/70 p-8 rounded-2xl backdrop-blur-sm border border-teal-400/20 hover:border-emerald-400/50 transition-all duration-300"
