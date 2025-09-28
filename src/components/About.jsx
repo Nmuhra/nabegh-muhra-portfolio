@@ -2,7 +2,7 @@
 import portfolioData from "../data/portfolioData.js";
 
 const About = () => {
-  const { cvData } = portfolioData() || {};
+  const { cvData } = portfolioData();
 
   return (
     <section id="about" className="relative w-full py-20 mx-auto bg-gray-900/40">
