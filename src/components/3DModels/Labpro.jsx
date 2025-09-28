@@ -11,7 +11,7 @@ import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export default function Model(props) {
-  const { nodes, materials } = useGLTF('labpro/labpro.gltf')
+  const { nodes, materials } = useGLTF(process.env.PUBLIC_URL + '/labpro/labpro.gltf')
   return (
     <group {...props} dispose={null}>
       <group position={[-52.287, 17.147, -292.806]} rotation={[-Math.PI / 2, 0, 0.788]} scale={31.781}>
@@ -149,4 +149,4 @@ export default function Model(props) {
   )
 }
 
-useGLTF.preload('labpro/labpro.gltf')
+useGLTF.preload(process.env.PUBLIC_URL + '/labpro/labpro.gltf')
