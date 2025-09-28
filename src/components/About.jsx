@@ -2,8 +2,8 @@
 import portfolioData from "../data/portfolioData.js";
 
 const About = () => {
-  const { about } = portfolioData.header.summary;
-  const { skills } = portfolioData.skills;
+  const  about  = portfolioData.header.summary;
+  const skills  = portfolioData.skills;
   return (
     <section id="about" className="relative w-full py-20 mx-auto bg-gray-900/40">
       <div className="max-w-7xl mx-auto px-6">
