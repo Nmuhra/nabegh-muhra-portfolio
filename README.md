@@ -5,17 +5,20 @@ This is a React-based portfolio website generated automatically from your CV dat
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js (version 14 or higher)
 - npm (comes with Node.js)
 
 ### Installation and Running
 
 1. **Install dependencies:**
+
    ```bash
    npm install
    ```
 
 2. **Start the development server:**
+
    ```bash
    npm start
    ```
@@ -55,23 +58,28 @@ This template includes a pre-configured GitHub Actions workflow for automatic de
 **Your site will be available at:** `https://yourusername.github.io/your-portfolio`
 
 #### Netlify
+
 1. Build the project locally using `npm run build`
 2. Drag and drop the `build` folder to [Netlify](https://netlify.com)
 3. Or connect your repository for automatic deployments
 
 #### Vercel
+
 1. Install Vercel CLI: `npm i -g vercel`
 2. Run: `vercel` in your project directory
 
 ## Customization
 
 ### Updating Your Information
+
 Edit the file `src/data/portfolioData.js` to update your personal information, skills, experience, and projects.
 
 ### Styling
+
 The main styles are in `public/index.html`. You can modify the CSS to change colors, fonts, and layout.
 
 ### Adding New Sections
+
 Modify `src/App.js` to add new sections or change the layout.
 
 ## Project Structure
