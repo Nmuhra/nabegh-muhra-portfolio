@@ -2,7 +2,7 @@
 import portfolioData from "../data/portfolioData.js";
 
 const About = () => {
-  const { cvData } = portfolioData;
+  const { about } = portfolioData.header.summary;
 
   return (
     <section id="about" className="relative w-full py-20 mx-auto bg-gray-900/40">
@@ -25,7 +25,7 @@ const About = () => {
               <h3 className="text-white text-2xl font-bold">Scientific Approach</h3>
             </div>
             <p className="text-gray-300 mb-4">
-              {cvData?.about}
+              {about}
             </p>
             <div className="flex items-center mt-6">
               <div className="w-16 h-16 rounded-full bg-emerald-400/10 border border-emerald-400/30 flex items-center justify-center mr-4">
