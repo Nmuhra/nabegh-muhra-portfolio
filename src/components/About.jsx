@@ -45,7 +45,7 @@ const About = () => {
               <h3 className="text-white text-2xl font-bold">Research Domains</h3>
             </div>
             <div className="space-y-6">
-              {cvData?.skills?.slice(0, 4).map((skill, index) => (
+              {skills?.slice(0, 4).map((skill, index) => (
                 <div key={index}>
                   <div className="flex justify-between mb-2">
                     <span className="text-white">{skill}</span>
