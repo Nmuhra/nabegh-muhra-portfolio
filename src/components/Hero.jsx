@@ -6,7 +6,7 @@ import portfolioData from '../data/portfolioData';
 import LabProModel from './3DModels/Labpro';
 
 const Hero = () => {
-  const { name, description } = portfolioData();
+  const { name, description } = portfolioData.header;
 
   return (
     <section className="relative w-full h-screen mx-auto flex items-center">
