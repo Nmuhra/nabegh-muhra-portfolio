@@ -2,7 +2,7 @@
 import portfolioData from "../data/portfolioData";
 
 const Experience = () => {
-  const { cvData } = portfolioData() || {};
+  const { cvData } = portfolioData();
 
   return (
     <section id="experience" className="relative w-full py-20 mx-auto bg-gray-900/20">
