@@ -3,7 +3,7 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { Suspense } from 'react';
 import portfolioData from '../data/portfolioData';
-import LabProModel from '../3DModels/Labpro';
+import LabProModel from './3DModels/Labpro';
 
 const Hero = () => {
   const { name, description } = portfolioData() || {};
