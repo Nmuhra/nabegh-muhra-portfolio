@@ -1,74 +1,95 @@
-// components/Templates/labpro/Experience.jsx
-import portfolioData from "../data/portfolioData";
+import portfolioData from '../data/portfolioData.js';
 
-const Experience = () => {
-  const  experience  = portfolioData.experience;
-  const education = portfolioData.education;
+const ExperienceAndEducation = () => {
 
   return (
-    <section id="experience" className="relative w-full py-20 mx-auto bg-gray-900/20">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-teal-50 text-4xl font-bold mb-4">Research Career</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-teal-400 to-emerald-400 mx-auto" />
-        </div>
-
+    <section id="experience" className="py-24 bg-gray-900/50 relative">
+      <div className="container mx-auto px-4">
         {/* Experience Section */}
-        <div className="space-y-8">
-          {experience.map((exp, index) => (
-            <div 
-              key={index}
-              className="bg-gray-900/70 p-8 rounded-2xl backdrop-blur-sm border border-emerald-400/20 hover:border-teal-400/50 transition-all duration-300"
-            >
-              <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
-                <h3 className="text-white text-2xl font-bold">{exp.title}</h3>
-                <span className="text-emerald-400 bg-emerald-400/10 px-3 py-1 rounded-full text-sm">
-                  {exp.startDate} - {exp.endDate}
-                </span>
-              </div>
-              <h4 className="text-teal-400 text-lg mb-4">{exp.company}</h4>
-              {exp.extra?.length > 0 && (
-                <ul className="text-gray-300 space-y-2 pl-5 list-disc">
-                  {exp.extra.map((bullet, i) => (
-                    <li key={i}>{bullet.replace('¢ ', '')}</li>
+        <h2 className="text-3xl font-bold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+          Experience
+        </h2>
+
+        <div className="max-w-3xl mx-auto relative mb-24">
+          {/* Timeline line */}
+          <div className="absolute left-4 top-2 bottom-2 w-0.5 bg-gradient-to-b from-blue-400 to-purple-600 md:left-1/2"></div>
+
+          {/* Experience Cards */}
+          <div className="flex flex-col gap-6 group">
+            {portfolioData?.experience?.map((item, index) => (
+              <div
+                key={`exp-${index}`}
+                className="relative transition-all duration-300 group-hover:blur-sm hover:!blur-none hover:scale-[1.05]"
+              >
+                {/* Timeline dot */}
+                <div className="absolute left-4 top-7 w-4 h-4 rounded-full bg-blue-500 md:left-1/2 md:-ml-2 z-10"></div>
+
+                {/* Content - alternating sides */}
+                <div className={`ml-12 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pr-8 md:text-right' : 'md:pl-8 md:ml-auto md:text-left'}`}>
+                  <div className="bg-gray-800/70 p-6 rounded-lg border border-gray-700 hover:border-blue-500 transition-all duration-300">
+                    <h3 className="font-bold text-xl text-blue-400">
+                      {item.title}
+                    </h3>
+                    <div className="mb-2">
+                      <p className="text-gray-300">{item.company}</p>
+                      <p className="text-gray-400 text-sm">{`${item.startDate} - ${item.endDate}`}</p>
+                    </div>
+                    <ul className="text-white list-disc pl-5">
+                  {item.extra?.map((bullet, bulletIndex) => (
+                    <li key={`bullet-${index}-${bulletIndex}`}>{bullet}</li>
                   ))}
-                </ul>
-              )}
-            </div>
-          ))}
+                </ul>                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Education Section */}
-        {education.length > 0 && (
-          <div className="mt-20">
-            <div className="text-center mb-16">
-              <h2 className="text-emerald-50 text-4xl font-bold mb-4">Academic Credentials</h2>
-              <div className="w-20 h-1 bg-gradient-to-r from-emerald-400 to-teal-400 mx-auto" />
-            </div>
+        <h2 className="text-3xl font-bold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+          Education
+        </h2>
 
-            <div className="space-y-8">
-              {education.map((edu, index) => (
-                <div 
-                  key={index}
-                  className="bg-gray-900/70 p-8 rounded-2xl backdrop-blur-sm border border-teal-400/20 hover:border-emerald-400/50 transition-all duration-300"
-                >
-                  <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
-                    <h3 className="text-white text-2xl font-bold">{edu.degree}</h3>
-                    <span className="text-teal-400 bg-teal-400/10 px-3 py-1 rounded-full text-sm">
-                      {edu.endDate}
-                    </span>
+        <div className="max-w-3xl mx-auto relative">
+          {/* Timeline line */}
+          <div className="absolute left-4 top-2 bottom-2 w-0.5 bg-gradient-to-b from-purple-400 to-pink-600 md:left-1/2"></div>
+
+          {/* Education Cards */}
+          <div className="flex flex-col gap-6 group">
+            {portfolioData?.education?.map((item, index) => (
+              <div
+                key={`edu-${index}`}
+                className="relative transition-all duration-300 group-hover:blur-sm hover:!blur-none hover:scale-[1.05]"
+              >
+                {/* Timeline dot */}
+                <div className="absolute left-4 top-7 w-4 h-4 rounded-full bg-purple-500 md:left-1/2 md:-ml-2 z-10"></div>
+
+                {/* Content - alternating sides */}
+                <div className={`ml-12 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pr-8 md:text-right' : 'md:pl-8 md:ml-auto md:text-left'}`}>
+                  <div className="bg-gray-800/70 p-6 rounded-lg border border-gray-700 hover:border-purple-500 transition-all duration-300">
+                    <h3 className="font-bold text-xl text-purple-400">
+                      {item.degree}
+                    </h3>
+                    <div className="mb-2">
+                      <p className="text-gray-300">{item.institution}</p>
+                      <p className="text-gray-400 text-sm">{item.endDate}</p>
+                    </div>
+                    {item.field && (
+                      <p className="text-gray-400">{item.field}</p>
+                    )}
+                    {item.gpa && <p className="text-white">GPA: {item.gpa}</p>}
                   </div>
-                  <h4 className="text-emerald-400 text-lg mb-2">{edu.institution}</h4>
-                  {edu.field && <p className="text-gray-300">{edu.field}</p>}
-                  {edu.gpa && <p className="text-gray-300">GPA: {edu.gpa}</p>}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
-        )}
+        </div>
       </div>
+
+      {/* Background blob */}
+      <div className="absolute top-1/2 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
     </section>
   );
 };
 
-export default Experience;
+export default ExperienceAndEducation;
